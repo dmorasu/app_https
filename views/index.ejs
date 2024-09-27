@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importar Datos</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Procesos Leasing Financiero</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h1 class="text-center mt-5">Importar Datos desde Excel</h1>
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <a href="/upload" class="btn btn-primary btn-block">Importar Datos</a>
-                    </div>
-                </div>
+    <div class="logo imglogo">
+       
+    </div>
+    
+    <div class="container bloque">
+        <h1 class="mt-5 ">Gestión Comercial Crédito Diferente a Vivienda</h1>
+        <form action="/buscar" method="POST">
+            <div class="form-group">
+                
+                <label for="numero_caso">Ingrese el número de caso a ingresar:</label>
+                <input type="text" class="form-control" id="numero_caso" name="numero_caso" required>
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
     </div>
 </body>
 </html>

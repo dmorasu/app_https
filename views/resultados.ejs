@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+    <div class="logo imglogo"></div>
+    <div class="container">
+        <h1 class="mt-5">Procesos Encontrados:</h1>
+        <% if (clientes.length > 0) { %>
+        <!-- <a href="/exportar/<%= clientes[0].usuario_comercial %>" class="btn btn-success">Exportar a Excel</a> -->
+        <% } else { %>
+        <p>No se encontraron resultados para el cliente proporcionada.</p>
+        <% } %>
+        <a href="/" class="btn btn-primary">Volver</a>
+
+        <!-- Filtros -->
+        <!-- <div class="form-group">
+            <label for="filterEstado">Filtrar por Estado:</label>
+            <select id="filterEstado" class="form-control">
+                <option value="">Todos</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Desistido">Desistido</option>
+                <option value="En tramite">En tramite</option>
+                <option value="En tramite">Suspendido</option>
+                <option value="En tramite">Cerrado</option>
+            </select>
+        </div> -->
+        
+
+        <table class="table table-bordered table-hover letratabla">
+            <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Nombre Cliente</th>
+                    <th>Fecha Asignación</th>
+                    <th>Número Caso</th>
+                    <th>Valor Hipoteca</th>
+                    <th>Matrícula</th>
+                    <th>Tramite</th>
+                    <th>Regional</th>
+                    <th>Estado</th>
+                    <th>Actividad Actual</th>
+                    <th>Responsable</th>
+                    <th>Trazabilidad de Gestión</th>
+                </tr>
+            </thead>
+            <tbody id="tablaClientes">
+                <% clientes.forEach(cliente => { %>
+                <tr>
+                    <td><%= cliente.identificacion %></td>
+                    <td><%= cliente.nombre_cliente %></td>
+                    <td><%= cliente.fecha %></td>
+                    <td><%= cliente.numero_caso %></td>
+                    <td><%= cliente.valor_hipoteca %></td>
+                    <td><%= cliente.matricula %></td>
+                    <td><%= cliente.tramite %></td>
+                    <td><%= cliente.regional %></td>
+                    <td><%= cliente.estado %></td>
+                    <td><%= cliente.actividad %></td>
+                    <td><%= cliente.responsable %></td>
+                    <td><%= cliente.trazabilidad %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <script>
+        document.getElementById('filterEstado').addEventListener('change', filterTable);
+        document.getElementById('searchCaso').addEventListener('input', filterTable);
+        document.getElementById('searchCliente').addEventListener('input', filterTable);
+
+        function filterTable() {
+            var estadoFilter = document.getElementById('filterEstado').value.toLowerCase();
+            var searchFilter = document.getElementById('searchCaso').value.toLowerCase();
+            var searchFilterCliente = document.getElementById('searchCliente').value.toLowerCase();
+            var table = document.getElementById('tablaClientes');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var estado = rows[i].getElementsByTagName('td')[9].innerText.toLowerCase();
+                var caso = rows[i].getElementsByTagName('td')[3].innerText.toLowerCase();
+                var cedula = rows[i].getElementsByTagName('td')[0].innerText.toLowerCase();
+                var showRow = true;
+
+                if (estadoFilter && estado !== estadoFilter) {
+                    showRow = false;
+                }
+
+                if (searchFilter && !caso.includes(searchFilter)) {
+                    showRow = false;
+                }
+                if (searchFilterCliente && !cedula.includes(searchFilterCliente)) {
+                    showRow = false;
+                }
+
+                rows[i].style.display = showRow ? '' : 'none';
+            }
+        }
+    </script> -->
+</body>
+</html>

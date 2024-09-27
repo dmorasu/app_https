@@ -1,0 +1,35 @@
+body{
+    
+    /*background: rgb(243,245,245);
+    background: linear-gradient(90deg, rgba(243,245,245,1) 0%, rgba(108,110,111,1) 100%, rgba(81,84,84,0.4738270308123249) 100%);  */
+    font-family: 'Lexend Mega', sans-serif;
+    background-color:whitesmoke;
+    
+    
+    
+}
+@media screen  and(max-width:900px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.logo{
+    background-image: url(../img/logo.png) ;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+   
+    
+   
+    
+}
+.imglogo{
+    width: 300px;
+    height: 150px;
+}
+
+.letratabla{
+    font-size: 60%;
+}
+    
